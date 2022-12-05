@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import Temp from '../src/assets/temp.png'
+import Drop from '../src/assets/drop.png'
+import Wind from '../src/assets/wind.png'
+import './index.css';
 
 function App() {
 
@@ -47,14 +51,17 @@ return (
       {data.name !== undefined &&
         <div className="bottom">
           <div className="feels">
+            <img className="icon-img" src={Temp}></img>
             {data.main ? <p className='bold'>{data.main.feels_like.toFixed()}°C</p> : null}
             <p>Feels Like</p>
           </div>
           <div className="humidity">
+            <img className="icon-img" src={Drop}></img>
             {data.main ? <p className='bold'>{data.main.humidity}%</p> : null}
             <p>Humidity</p>
           </div>
           <div className="wind">
+            <img className="icon-img" src={Wind}></img>
             {data.wind ? <p className='bold'>{data.wind.speed.toFixed()} MPH</p> : null}
             <p>Wind Speed</p>
           </div>
